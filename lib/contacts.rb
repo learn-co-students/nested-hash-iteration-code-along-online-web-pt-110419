@@ -16,8 +16,7 @@
   # }
 
 
-
-
+=begin
 def remove_strawberry(contacts)
    contacts["Freddy Mercury"].each do |name, value|
       if name == :favorite_ice_cream_flavors
@@ -26,3 +25,15 @@ def remove_strawberry(contacts)
     end
     return contacts
  end
+=end
+
+def remove_strawberry(contacts)
+  contacts.each do |name, details|
+    if name == "Freddy Mercury"
+      details.each do |key, value|
+        if key == :favorite_ice_cream_flavors
+          value.delete {|flavor| flavor == "strawberry"}
+        end
+      end
+    end
+end
